@@ -35,7 +35,7 @@ const meusProjetos = ref([
     frameworks: [],
     banco_dados: [],
     back_end: [],
-    link: '#',
+    link: 'https://relogio-digital-zeta.vercel.app/', // <--- Link atualizado aqui! (Lembre de trocar pela URL pública depois se preferir)
     imagem: 'https://images.unsplash.com/photo-1508962914676-134849a727f0?w=500&auto=format&fit=crop&q=60'
   },
   {
@@ -46,7 +46,7 @@ const meusProjetos = ref([
     frameworks: ['Vue.js'],
     banco_dados: ['PostgreSQL'],
     back_end: ['Node.js'],
-    link: '#',
+    link: 'https://conecta-talentos-lope.vercel.app', // <--- Note o 'link:' antes e a vírgula no final!s
     imagem: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=500&auto=format&fit=crop&q=60'
   },
   {
@@ -156,7 +156,7 @@ function selecionarFiltro(id: string) {
             </div>
           </div>
           
-          <a :href="projeto.link" class="btn-project-link">Acessar Sistema →</a>
+       <a :href="projeto.link" target="_blank" rel="noopener" class="btn-project-link">Acessar Sistema →</a>
         </div>
       </div>
     </div>

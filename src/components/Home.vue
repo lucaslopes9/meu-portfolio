@@ -108,7 +108,7 @@ function navegarPara(tela: string, secaoId?: string) {
 <template>
   <div class="top-header">
     <div class="contato-link">
-      <a href="#contato" @click.prevent="navegarPara('home', 'contato')">{{ t.faleComigo }}</a>
+     <a href="https://wa.me/5519971630276?text=Olá%20Lucas,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto!" target="_blank" rel="noopener">{{ t.faleComigo }}</a>
     </div> 
     
     <div class="seletor-idioma">
@@ -120,7 +120,7 @@ function navegarPara(tela: string, secaoId?: string) {
     <div class="redes-sociais">
       <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://wa.me/seu-numero" target="_blank" rel="noopener">WhatsApp</a>
+     <a href="https://wa.me/5519971630276?text=Olá%20Lucas,%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 
