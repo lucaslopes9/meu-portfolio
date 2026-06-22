@@ -3,6 +3,9 @@ import { ref, computed } from 'vue'
 // Importe o seu componente de Portfólio aqui (ajuste o caminho se necessário)
 import Portfolio from './Portfolio.vue' 
 
+// Importando o PDF dinamicamente com o caminho relativo correto e nome limpo
+import curriculoPdf from '../assets/curriculo-lucas-lopes.pdf'
+
 // Controle de qual tela está visível: 'home' ou 'portfolio'
 const telaAtiva = ref('home')
 
@@ -30,14 +33,14 @@ const textos = {
     servicosH1: 'O que posso fazer pelo seu negócio',
     servicosDesc: 'Transformo suas necessidades em soluções robustas, eficientes e escaláveis. Utilizo as melhores tecnologias do mercado para entregar sistemas inovadores, sites de alta conversão e aplicativos modernos.',
     s1Titulo: 'Criação de Sites e Sistemas',
-    s1Desc: 'Desenvolvimento de plataformas modernas, rápidas e responsivas, focadas em usabilidade e na melhor experiência para o Usuário.',
+    s1Desc: 'Development of platforms modern, rápidas e responsivas, focadas em usabilidade e na melhor experiência para o Usuário.',
     s2Titulo: 'Soluções Mobile',
     s2Desc: 'Criação de aplicativos nativos e híbridos intuitivos, com foco em performance e interface moderna para conectar sua marca aos usuários mobile.',
     s3Titulo: 'Infraestrutura Cloud & AWS',
     s3Desc: 'Sua aplicação trava ou fica lenta quando recebe muitos acessos? Eu configuro a arquitetura técnica que sustenta o seu crescimento: servidores escaláveis na AWS.',
     s4Titulo: 'Identidade Visual',
     s4Desc: 'Criação de identidades visuais estratégicas, desde logotipos até sistemas de aplicação, garantindo consistência e conexão com seu público.',
-    sobreH2: 'Sobre Mim',
+    sobreH2: 'Sobre Me',
     sobreH3: 'Profissional focado em transformar código em valor de negócio',
     sobreP1: 'Muito prazer! Eu sou o Lucas, desenvolvedor de software especializado em criar sistemas robustos, aplicativos dinâmicos e sites de alta conversão. Minha missão é entender as dores do seu negócio e construir a ferramenta digital exata para resolver seus problemas e automatizar seus processos.',
     sobreP2: 'Com uma sólida bagagem técnica e um olhar estratégico, busco entregar produtos que não apenas funcionam perfeitamente, mas que oferecem uma experiência incrível e geram resultados reais de faturamento e engajamento.',
@@ -135,8 +138,8 @@ function navegarPara(tela: string, secaoId?: string) {
       <a href="#" @click.prevent="navegarPara('home', 'servicos')">{{ t.servicos }}</a>
       <a href="#" @click.prevent="navegarPara('home', 'tecnologias')">{{ t.tecnologias }}</a>
       <a href="#" @click.prevent="navegarPara('portfolio')">{{ t.portfolio }}</a>
-      <a href="#contato" @click.prevent="navegarPara('home', 'contato')">{{ t.curriculo }}</a>
-    </nav> 
+
+<a :href="curriculoPdf" download="Curriculo_Lucas_Lopes.pdf" target="_blank">{{ t.curriculo }}</a>    </nav> 
   </header>
 
   <Portfolio v-if="telaAtiva === 'portfolio'" @voltar="navegarPara('home')" />
