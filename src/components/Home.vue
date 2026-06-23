@@ -988,21 +988,57 @@ function navegarPara(tela: string, secaoId?: string) {
 
 
 
-@media (max-width: 900px) {
-  .about-container {
+@media (max-width: 768px) {
+  .meu-header {
     flex-direction: column;
-    gap: 40px;
+    gap: 15px;
+    align-items: center;
     text-align: center;
   }
 
-  .about-image img {
-    max-width: 80%;
-  }
-
-  .btn-secondary-outline {
-    align-self: center;
+  .menu-container {
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que os links quebrem linha se não couberem */
+    justify-content: center;
+    gap: 12px;
+    font-size: 0.9rem;
   }
 }
+
+
+
+@media (max-width: 968px) {
+  .tech-tree::before {
+    display: none;
+  }
+
+  .tech-tree {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 100%; /* Garante que use o espaço disponível */
+    max-width: 100%;
+    padding: 0 10px; /* Margem de segurança para o celular */
+  }
+
+  .tech-branch {
+    width: 100%;
+    max-width: 400px; /* Limita o tamanho para não ficar gigante em tablets */
+  }
+
+  .branch-connector {
+    height: 15px;
+  }
+  
+  .tech-box {
+    min-height: auto;
+    width: 100%;
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho da caixa */
+  }
+}
+
+
+
 
 
 .seletor-idioma {

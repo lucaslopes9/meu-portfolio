@@ -14,7 +14,7 @@ const filtros = ref([
 
 const filtroSelecionado = ref('todos')
 
-// 2. Seus Sistemas com a estrutura categorizada mantida nos cards finais
+// 2. Seus Sistemas com a estrutura do Make Your Dog adicionada
 const meusProjetos = ref([
   {
     id: 1,
@@ -35,7 +35,7 @@ const meusProjetos = ref([
     frameworks: [],
     banco_dados: [],
     back_end: [],
-    link: 'https://relogio-digital-zeta.vercel.app/', // <--- Link atualizado aqui! (Lembre de trocar pela URL pública depois se preferir)
+    link: 'https://relogio-digital-zeta.vercel.app/',
     imagem: 'https://images.unsplash.com/photo-1508962914676-134849a727f0?w=500&auto=format&fit=crop&q=60'
   },
   {
@@ -46,7 +46,7 @@ const meusProjetos = ref([
     frameworks: ['Vue.js'],
     banco_dados: ['PostgreSQL'],
     back_end: ['Node.js'],
-    link: 'https://conecta-talentos-lope.vercel.app', // <--- Note o 'link:' antes e a vírgula no final!s
+    link: 'https://conecta-talentos-lope.vercel.app',
     imagem: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=500&auto=format&fit=crop&q=60'
   },
   {
@@ -61,15 +61,15 @@ const meusProjetos = ref([
     imagem: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=500&auto=format&fit=crop&q=60'
   },
   {
-    id: 4,
-    titulo: 'SaaS de Gestão de Eventos',
-    descricao: 'Sistema robusto para controle financeiro, venda de ingressos digitais e gestão de eventos corporativos.',
+    id: 6,
+    titulo: 'Make Your Dog',
+    descricao: 'Sistema completo e responsivo para gerenciamento, personalização e pedidos de montagem de cachorros-quentes gourmet.',
     web_base: ['HTML', 'CSS', 'JavaScript'],
-    frameworks: ['Angular'],
-    banco_dados: ['SQL Server'],
-    back_end: ['C#', '.NET', 'Java', 'Golang'],
-    link: '#',
-    imagem: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=500&auto=format&fit=crop&q=60'
+    frameworks: ['Vue.js', 'Vue Router'],
+    banco_dados: ['JSON Server'],
+    back_end: ['Node.js'],
+    link: 'https://github.com/lucaslopes9/MakeyourDOgOficial.git', // <--- Ajuste o link se ele já estiver publicado fora do GitHub
+    imagem: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?w=500&auto=format&fit=crop&q=60'
   }
 ])
 
@@ -156,7 +156,7 @@ function selecionarFiltro(id: string) {
             </div>
           </div>
           
-       <a :href="projeto.link" target="_blank" rel="noopener" class="btn-project-link">Acessar Sistema →</a>
+          <a :href="projeto.link" target="_blank" rel="noopener" class="btn-project-link">Acessar Sistema →</a>
         </div>
       </div>
     </div>
