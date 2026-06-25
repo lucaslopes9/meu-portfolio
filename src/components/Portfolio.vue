@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
+import certificadoTecnico from '../assets/Certificado_Desenvolvedor_web.pdf';
+
 defineEmits(['voltar'])
 
 // 1. Botões de filtro superiores baseados nas camadas da Stack
@@ -14,7 +16,7 @@ const filtros = ref([
 
 const filtroSelecionado = ref('todos')
 
-// 2. Seus Sistemas com a estrutura do Make Your Dog adicionada
+// 2. Seus Sistemas
 const meusProjetos = ref([
   {
     id: 1,
@@ -63,14 +65,29 @@ const meusProjetos = ref([
   {
     id: 6,
     titulo: 'Make Your Dog',
-    descricao: 'Sistema completo e responsivo para gerenciamento, personalização e pedidos de montagem de cachorros-quentes gourmet.',
+    descricao: 'Sistema completo e responsivo, para gerenciamento, personalização e pedidos de montagem de cachorros-quentes gourmet.',
     web_base: ['HTML', 'CSS', 'JavaScript'],
     frameworks: ['Vue.js', 'Vue Router'],
     banco_dados: ['JSON Server'],
     back_end: ['Node.js'],
-    link: 'https://github.com/lucaslopes9/MakeyourDOgOficial.git', // <--- Ajuste o link se ele já estiver publicado fora do GitHub
+    link: 'https://makeyour-d-og-oficial-neon.vercel.app/', 
     imagem: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?w=500&auto=format&fit=crop&q=60'
+  },
+ 
+
+{
+    id: 7,
+    titulo: 'Loja Virtual de Jogos',
+    descricao: '🏆 [PROJETO DE CONCLUSÃO DE CURSO LIVRE: desenvolvimento web] Um e-commerce interativo com catálogo responsivo, carrinho de compras funcional e filtros de busca avançados.',
+    web_base: ['HTML', 'CSS', 'JavaScript'],
+    frameworks: [],
+    banco_dados: [],
+    back_end: [],
+    link: 'https://loja-virtual-de-jogos-finalizada.vercel.app',
+    certificado: certificadoTecnico,
+    imagem: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&auto=format&fit=crop&q=60'
   }
+
 ])
 
 // 3. Filtro dinâmico inteligente pelas camadas da Stack
@@ -156,7 +173,16 @@ function selecionarFiltro(id: string) {
             </div>
           </div>
           
-          <a :href="projeto.link" target="_blank" rel="noopener" class="btn-project-link">Acessar Sistema →</a>
+          <div class="project-actions">
+            <a :href="projeto.link" target="_blank" rel="noopener" class="btn-project-link">
+              Acessar Sistema →
+            </a>
+            
+            <!-- Mostra o botão de certificado apenas se o projeto tiver um -->
+            <a v-if="projeto.certificado" :href="projeto.certificado" target="_blank" rel="noopener" class="btn-certificate-link">
+              🏅 Ver Certificado
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -358,20 +384,41 @@ function selecionarFiltro(id: string) {
 .tag-db { background-color: #b37d14; color: #ffeebf; }
 .tag-back { background-color: #4d235a; color: #f7bfff; }
 
-.btn-project-link {
+/* CONTAINER DAS AÇÕES - ALINHAMENTO CORRIGIDO */
+.project-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
   margin-top: auto;
+  padding-top: 15px;
+}
+
+.btn-project-link {
   color: #42b883;
   text-decoration: none;
   font-weight: bold;
   font-size: 0.95rem;
   transition: 0.2s ease;
-  align-self: flex-start;
-  padding-top: 15px;
 }
 
 .btn-project-link:hover {
   color: white;
-  padding-left: 6px;
+  padding-left: 4px;
+}
+
+/* NOVO ESTILO DO BOTÃO DE CERTIFICADO */
+.btn-certificate-link {
+  color: #ffc107;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-certificate-link:hover {
+  color: white;
+  transform: translateY(-1px);
 }
 
 /* --- RESPONSIVIDADE --- */
@@ -384,5 +431,6 @@ function selecionarFiltro(id: string) {
   .tech-filters-container { gap: 12px; }
   .tech-filter-card { min-width: 120px; padding: 15px; }
   .tech-group-row { flex-direction: column; align-items: flex-start; gap: 5px; }
+  .project-actions { flex-direction: column; align-items: flex-start; gap: 10px; }
 }
 </style>

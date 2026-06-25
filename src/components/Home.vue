@@ -4,7 +4,7 @@ import { ref, computed } from 'vue'
 import Portfolio from './Portfolio.vue' 
 
 // Importando o PDF dinamicamente com o caminho relativo correto e nome limpo
-import curriculoPdf from '../assets/curriculo-lucas-lopes.pdf'
+import curriculoPdf from '../assets/Curriculo Lucas-Lopes-Desenvolvedor.pdf'
 
 // Controle de qual tela está visível: 'home' ou 'portfolio'
 const telaAtiva = ref('home')
