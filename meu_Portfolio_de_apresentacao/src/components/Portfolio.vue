@@ -9,7 +9,7 @@ defineEmits(['voltar'])
 const filtros = ref([
   { id: 'todos', nome: 'Todos', icone: '📂' },
   { id: 'web_base', nome: 'Web Base', icone: '🌐' },
-  { id: 'git', nome: 'Git e GitHub', icone: '🐙' },
+  { id: 'controle_versao', nome: 'Controle de Versão', icone: '🐙' },
   { id: 'frameworks', nome: 'Frameworks', icone: '🟢' },
   { id: 'banco_dados', nome: 'Banco de Dados', icone: '🗄️' },
   { id: 'back_end', nome: 'Back-End', icone: '⚙️' }
@@ -17,7 +17,7 @@ const filtros = ref([
 
 const filtroSelecionado = ref('todos')
 
-// 2. Seus Sistemas (Todos alinhados com a nova propriedade git)
+// 2. Seus Sistemas (Todos alinhados com a nova propriedade controle_versao)
 const meusProjetos = ref([
   {
     id: 1,
@@ -26,7 +26,7 @@ const meusProjetos = ref([
     web_base: ['HTML', 'CSS', 'JavaScript'],
     frameworks: ['React Native'],
     banco_dados: ['Firebase'],
-    git: [],
+    controle_versao: ['Git', 'GitHub'],
     back_end: ['Node.js'],
     link: '#',
     imagem: 'https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=500&auto=format&fit=crop&q=60'
@@ -38,7 +38,7 @@ const meusProjetos = ref([
     web_base: ['HTML', 'CSS', 'JavaScript'],
     frameworks: [],
     banco_dados: [],
-    git: ['Git', 'GitHub'], // <-- CORRIGIDO: Chave correta e tags adicionadas
+    controle_versao: ['Git', 'GitHub'],
     back_end: [],
     link: 'https://relogio-digital-zeta.vercel.app/',
     imagem: 'https://images.unsplash.com/photo-1508962914676-134849a727f0?w=500&auto=format&fit=crop&q=60'
@@ -50,8 +50,7 @@ const meusProjetos = ref([
     web_base: ['HTML', 'CSS', 'JavaScript'],
     frameworks: ['Vue.js'],
     banco_dados: ['PostgreSQL'],
-    git: [],
-    git: ['Git', 'GitHub'],
+    controle_versao: ['Git', 'GitHub'],
     back_end: ['Node.js'],
     link: 'https://conecta-talentos-lope.vercel.app',
     imagem: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=500&auto=format&fit=crop&q=60'
@@ -63,7 +62,7 @@ const meusProjetos = ref([
     web_base: ['HTML', 'CSS', 'JavaScript'],
     frameworks: ['Vue.js'],
     banco_dados: ['MySQL'],
-    git: ['Git', 'GitHub'],
+    controle_versao: ['Git', 'GitHub'],
     back_end: ['PHP', 'Laravel'],
     link: '#',
     imagem: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=500&auto=format&fit=crop&q=60'
@@ -75,7 +74,7 @@ const meusProjetos = ref([
     web_base: ['HTML', 'CSS', 'JavaScript'],
     frameworks: ['Vue.js', 'Vue Router'],
     banco_dados: ['JSON Server'],
-    git: ['Git', 'GitHub'],
+    controle_versao: ['Git', 'GitHub'],
     back_end: ['Node.js'],
     link: 'https://makeyour-d-og-oficial-neon.vercel.app/', 
     imagem: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?w=500&auto=format&fit=crop&q=60'
@@ -87,33 +86,25 @@ const meusProjetos = ref([
     web_base: ['HTML', 'CSS', 'JavaScript'],
     frameworks: [],
     banco_dados: [],
-    git: ['Git', 'GitHub'], // <-- Adicionado para você poder filtrar este também por Git
+    controle_versao: ['Git', 'GitHub'],
     back_end: [],
     link: 'https://loja-virtual-de-jogos-finalizada.vercel.app',
     certificado: certificadoTecnico,
     imagem: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&auto=format&fit=crop&q=60'
   },
-
- {
+  {
     id: 8,
     titulo: 'Codifica Projeto Chat',
     descricao: 'Projeto de chat desenvolvido durante o curso livre de desenvolvimento web que simula a comunicação em tempo real entre dois usuários. A aplicação utiliza manipulação dinâmica do DOM e lógica de programação para renderização de mensagens e controle de fluxos da interface.',
     web_base: ['HTML', 'CSS', 'JavaScript'],
     frameworks: [], 
     banco_dados: [], 
-    git: ['Git', 'GitHub'],
+    controle_versao: ['Git', 'GitHub'],
     back_end: [], 
     certificado: certificadoTecnico,
     link: 'https://codifica-projeto-chat.vercel.app/',
     imagem: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&auto=format&fit=crop&q=60'
   }
-
-
-
-
-
-
-
 ])
 
 // 3. Filtro dinâmico inteligente pelas camadas da Stack
@@ -177,10 +168,10 @@ function selecionarFiltro(id: string) {
               </div>
             </div>
 
-            <div v-if="projeto.git && projeto.git.length > 0" class="tech-group-row">
-              <span class="group-label">Git / GitHub:</span>
+            <div v-if="projeto.controle_versao && projeto.controle_versao.length > 0" class="tech-group-row">
+              <span class="group-label">Controle de Versão:</span>
               <div class="project-tags">
-                <span v-for="t in projeto.git" :key="t" class="tag tag-back">{{ t }}</span>
+                <span v-for="t in projeto.controle_versao" :key="t" class="tag tag-back">{{ t }}</span>
               </div>
             </div>
 
