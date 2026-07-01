@@ -104,7 +104,21 @@ const meusProjetos = ref([
     certificado: certificadoTecnico,
     link: 'https://codifica-projeto-chat.vercel.app/',
     imagem: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&auto=format&fit=crop&q=60'
+  },
+
+{
+    id: 9,
+    titulo: 'Muun Free',
+    descricao: 'Plataforma desenvolvida em WordPress para conectar programadores freelancers a potenciais clientes. Criado como conclusão de curso na StackX, o projeto utilizou Metodologias Ágeis e a plataforma Bitrix24 para a gestão de tarefas e controle de entregas da equipe.',
+    web_base: ['HTML', 'CSS', 'JavaScript'],
+    frameworks: ['WordPress'],
+    banco_dados: ['MySQL'],
+    controle_versao: ['Git', 'GitHub'],
+    back_end: ['PHP'],
+    link: '#', // Subescreva o '#' com o link se o site estiver no ar!
+    imagem: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&auto=format&fit=crop&q=60'
   }
+
 ])
 
 // 3. Filtro dinâmico inteligente pelas camadas da Stack
